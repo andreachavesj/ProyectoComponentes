@@ -1,21 +1,13 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: 14
     commands:
-      - cd frontend-proyecto-componentes  # Cambia al directorio donde se encuentra package.json
-      - npm install  # Instala dependencias
-
+      - npm install
   build:
     commands:
-      - npm run-script build
-
+      - npm run build
 artifacts:
   files:
-    - public/*/
-    - src/*/
-    - frontend-proyecto-componentes/package.json  # Incluye el archivo package.json desde la ubicación correcta
-    - frontend-proyecto-componentes/appspec.yml
-    - frontend-proyecto-componentes/scripts/*/
+    - '**/*'
